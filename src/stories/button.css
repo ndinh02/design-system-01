@@ -1,12 +1,26 @@
 .storybook-button {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   cursor: pointer;
   border: 0;
-  border-radius: 3em;
+  /* 20px curve on all four corners */
+  border-radius: 20px;
   font-weight: 700;
   line-height: 1;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  outline: none;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.05s ease,
+    opacity 0.15s ease;
 }
+
+/* --- variants --- */
+
 .storybook-button--primary {
   background-color: #555ab9;
   color: white;
@@ -16,6 +30,73 @@
   background-color: transparent;
   color: #333;
 }
+
+/* --- hover state --- */
+
+.storybook-button--primary:hover:not(:disabled) {
+  background-color: #4348a3;
+}
+.storybook-button--secondary:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* --- active / pressed state --- */
+
+.storybook-button--primary:active:not(:disabled) {
+  background-color: #383d8c;
+  transform: scale(0.97);
+}
+.storybook-button--secondary:active:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: scale(0.97);
+}
+
+/* --- keyboard focus state --- */
+
+.storybook-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(85, 90, 185, 0.4);
+}
+.storybook-button--secondary:focus-visible {
+  box-shadow:
+    rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset,
+    0 0 0 3px rgba(85, 90, 185, 0.4);
+}
+
+/* --- disabled state --- */
+
+.storybook-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+/* --- loading state --- */
+
+.storybook-button--loading {
+  cursor: progress;
+}
+.storybook-button--loading .storybook-button__label {
+  opacity: 0.6;
+}
+
+.storybook-button__spinner {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: storybook-button-spin 0.6s linear infinite;
+}
+
+@keyframes storybook-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- sizes --- */
+
 .storybook-button--small {
   padding: 10px 16px;
   font-size: 12px;

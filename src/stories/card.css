@@ -1,0 +1,66 @@
+.storybook-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 240px;
+  max-width: 360px;
+  padding: 20px 24px;
+  background: #fff;
+  /* top-left: 10px, top-right: 0, bottom-right: 10px, bottom-left: 0 */
+  /* radius is also applied inline from the `radius` prop */
+  /* shadow cast to the left, 10px blur radius, 50% intensity */
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  overflow: hidden;
+}
+
+.storybook-card__highlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.storybook-card__highlight path {
+  fill: none;
+  stroke: var(--accent, #aa3bff);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  /* a short bright segment (18 of 100 pathLength units) chasing a gap */
+  stroke-dasharray: 18 82;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: storybook-card-trace 2.4s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.2s ease;
+}
+
+/* while the cursor stays on the card, the highlight keeps travelling
+   around the outline, following the same corners as the card shape */
+.storybook-card:hover .storybook-card__highlight path {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes storybook-card-trace {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.storybook-card__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+.storybook-card__body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}

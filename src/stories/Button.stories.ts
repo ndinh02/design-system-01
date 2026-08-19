@@ -52,3 +52,19 @@ export const Small: Story = {
     label: 'Button',
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    primary: true,
+    label: 'Button',
+    disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    primary: true,
+    label: 'Button',
+    loading: true,
+  },
+};
