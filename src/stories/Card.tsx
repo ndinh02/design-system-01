@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import { radiusLg } from '../tokens';
+
 import './card.css';
 
 export interface CardProps {
@@ -12,7 +14,7 @@ export interface CardProps {
 }
 
 /** Card surface with rounded corners and a hover-tracing highlight */
-export const Card = ({ title, children, radius = 10 }: CardProps) => {
+export const Card = ({ title, children, radius = radiusLg }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 

@@ -1,0 +1,8 @@
+/* Generated from tokens.json (DTCG format) — keep in sync by hand. */
+:root {
+  --color-primary: #5e90db;
+  --font-size-base: 16pt;
+  --radius-button: 20px;
+  --radius-lg: 10px;
+  --shadow-card: -10px 0px 10px rgba(0, 0, 0, 0.2);
+}
