@@ -1,8 +1,16 @@
 /* Generated from tokens.json (DTCG format) — keep in sync by hand. */
 :root {
   --color-primary: #5e90db;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #595959;
+  --color-surface: #ffffff;
   --font-size-base: 16pt;
+  --font-size-lg: 20px;
+  --font-weight-bold: 700;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
   --radius-button: 20px;
   --radius-lg: 10px;
+  --radius-sm: 6px;
   --shadow-card: -10px 0px 10px rgba(0, 0, 0, 0.2);
 }
