@@ -24,7 +24,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_b1e811d21f99019",
+    "chromatic": "npx chromatic",
     "changeset": "changeset",
     "version": "changeset version"
   },
