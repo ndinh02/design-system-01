@@ -7,11 +7,11 @@ export interface CardProps {
   title?: string;
   /** Card body content */
   children?: React.ReactNode;
-  /** Corner radius applied to the top-left and bottom-right corners */
+  /** Corner radius applied to all four corners */
   radius?: number;
 }
 
-/** Card surface with two rounded corners and a hover-tracing highlight */
+/** Card surface with rounded corners and a hover-tracing highlight */
 export const Card = ({ title, children, radius = 10 }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -38,23 +38,25 @@ export const Card = ({ title, children, radius = 10 }: CardProps) => {
   const { width: w, height: h } = size;
   // inset the tracing line half a stroke-width inside the card edge, and
   // shrink the corner radius to match so the line rides exactly on the
-  // card's own rounded/pointy corners.
+  // card's own rounded corners.
   const inset = 1.25;
   const r = Math.max(radius - inset, 0);
   const path =
     w > 0 && h > 0
       ? `M ${r + inset},${inset}
-         L ${w - inset},${inset}
+         L ${w - r - inset},${inset}
+         A ${r},${r} 0 0 1 ${w - inset},${r + inset}
          L ${w - inset},${h - r - inset}
          A ${r},${r} 0 0 1 ${w - r - inset},${h - inset}
-         L ${inset},${h - inset}
+         L ${r + inset},${h - inset}
+         A ${r},${r} 0 0 1 ${inset},${h - r - inset}
          L ${inset},${r + inset}
          A ${r},${r} 0 0 1 ${r + inset},${inset}
          Z`
       : '';
 
   return (
-    <div ref={ref} className="storybook-card" style={{ borderRadius: `${radius}px 0 ${radius}px 0` }}>
+    <div ref={ref} className="storybook-card" style={{ borderRadius: `${radius}px` }}>
       <svg className="storybook-card__highlight" width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
         <path d={path} pathLength={100} />
       </svg>
