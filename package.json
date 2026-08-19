@@ -26,7 +26,8 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic",
     "changeset": "changeset",
-    "version": "changeset version"
+    "version": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "peerDependencies": {
     "react": "^19.0.0",

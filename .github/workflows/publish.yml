@@ -4,14 +4,19 @@ on:
   push:
     branches: [main]
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -20,9 +25,15 @@ jobs:
           scope: '@ndinh02'
 
       - run: npm ci
-      - run: npx changeset version   # bump package.json + changelog from pending changesets
-      - run: npm run build
 
-      - run: npm publish
+      # If there are pending changesets, opens/updates a "Version Packages" PR
+      # with the version bump + changelog. Only runs `release` (build + publish)
+      # once that PR is merged and no changesets remain, so each version is
+      # published exactly once.
+      - name: Create Release Pull Request or Publish
+        uses: changesets/action@v1
+        with:
+          publish: npm run release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
