@@ -1,8 +1,27 @@
 /* Generated from tokens.json (DTCG format) — keep in sync by hand. */
 :root {
   --color-primary: #5e90db;
+  --color-accent-soft: rgba(94, 144, 219, 0.12);
+  --color-surface: #ffffff;
+  --color-surface-canvas: #f7f7f5;
+  --color-text: #1a1a18;
+  --color-text-muted: #6b6b66;
+  --color-text-on-primary: #ffffff;
+  --color-border: #e4e4df;
+  --color-success: #4d9d6b;
+  --color-warning: #c28f2c;
+  --color-danger: #c25450;
+  --font-size-sm: 13pt;
   --font-size-base: 16pt;
-  --radius-button: 20px;
+  --font-size-lg: 20pt;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --radius-sm: 6px;
   --radius-lg: 10px;
+  --radius-button: 20px;
+  --radius-pill: 999px;
   --shadow-card: -10px 0px 10px rgba(0, 0, 0, 0.2);
 }

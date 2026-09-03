@@ -1,0 +1,104 @@
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.ds-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.ds-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ds-button--small {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+}
+
+.ds-button--medium {
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.ds-button--large {
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-sm) var(--spacing-xl);
+}
+
+.ds-button--primary {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.ds-button--primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.ds-button--secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.ds-button--secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ds-button--ghost {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.ds-button--ghost:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.ds-button--loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.ds-button--loading::after {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentcolor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  color: var(--color-text-on-primary);
+  animation: ds-button-spin 600ms linear infinite;
+}
+
+.ds-button--loading.ds-button--secondary::after,
+.ds-button--loading.ds-button--ghost::after {
+  color: var(--color-primary);
+}
+
+@keyframes ds-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-button--loading::after {
+    animation-duration: 1.8s;
+  }
+}
