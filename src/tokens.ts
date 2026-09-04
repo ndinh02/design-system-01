@@ -1,7 +1,27 @@
 import tokens from './tokens.json';
 
 export const colorPrimary = tokens.color.primary.$value;
+export const colorAccentSoft = tokens.color['accent-soft'].$value;
+export const colorSurface = tokens.color.surface.$value;
+export const colorSurfaceCanvas = tokens.color['surface-canvas'].$value;
+export const colorText = tokens.color.text.$value;
+export const colorTextMuted = tokens.color['text-muted'].$value;
+export const colorTextOnPrimary = tokens.color['text-on-primary'].$value;
+export const colorBorder = tokens.color.border.$value;
+export const colorBorderStrong = tokens.color['border-strong'].$value;
+export const colorSuccess = tokens.color.success.$value;
+export const colorWarning = tokens.color.warning.$value;
+export const colorDanger = tokens.color.danger.$value;
+export const fontSizeSm = tokens.typography.fontSize.sm.$value;
 export const fontSizeBase = tokens.typography.fontSize.base.$value;
-export const radiusButton = parseInt(tokens.radius.button.$value, 10);
+export const fontSizeLg = tokens.typography.fontSize.lg.$value;
+export const spacingXs = tokens.spacing.xs.$value;
+export const spacingSm = tokens.spacing.sm.$value;
+export const spacingMd = tokens.spacing.md.$value;
+export const spacingLg = tokens.spacing.lg.$value;
+export const spacingXl = tokens.spacing.xl.$value;
+export const radiusSm = parseInt(tokens.radius.sm.$value, 10);
 export const radiusLg = parseInt(tokens.radius.lg.$value, 10);
+export const radiusButton = parseInt(tokens.radius.button.$value, 10);
+export const radiusPill = parseInt(tokens.radius.pill.$value, 10);
 export const shadowCard = tokens.shadow.card.$value;

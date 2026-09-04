@@ -1,8 +1,28 @@
 /* Generated from tokens.json (DTCG format) — keep in sync by hand. */
 :root {
-  --color-primary: #5e90db;
+  --color-primary: #2a65bd;
+  --color-accent-soft: rgba(42, 101, 189, 0.12);
+  --color-surface: #ffffff;
+  --color-surface-canvas: #f7f7f5;
+  --color-text: #1a1a18;
+  --color-text-muted: #6b6b66;
+  --color-text-on-primary: #ffffff;
+  --color-border: #e4e4df;
+  --color-border-strong: #91917d;
+  --color-success: #366f4c;
+  --color-warning: #7f5e1d;
+  --color-danger: #ab403c;
+  --font-size-sm: 13pt;
   --font-size-base: 16pt;
-  --radius-button: 20px;
+  --font-size-lg: 20pt;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --radius-sm: 6px;
   --radius-lg: 10px;
+  --radius-button: 20px;
+  --radius-pill: 999px;
   --shadow-card: -10px 0px 10px rgba(0, 0, 0, 0.2);
 }
