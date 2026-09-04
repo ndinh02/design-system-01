@@ -29,16 +29,16 @@
 }
 
 .ds-badge--success {
-  background: rgba(77, 157, 107, 0.14);
+  background: rgba(54, 111, 76, 0.14);
   color: var(--color-success);
 }
 
 .ds-badge--warning {
-  background: rgba(194, 143, 44, 0.14);
+  background: rgba(127, 94, 29, 0.14);
   color: var(--color-warning);
 }
 
 .ds-badge--danger {
-  background: rgba(194, 84, 80, 0.14);
+  background: rgba(171, 64, 60, 0.14);
   color: var(--color-danger);
 }

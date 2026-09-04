@@ -8,6 +8,7 @@ export const colorText = tokens.color.text.$value;
 export const colorTextMuted = tokens.color['text-muted'].$value;
 export const colorTextOnPrimary = tokens.color['text-on-primary'].$value;
 export const colorBorder = tokens.color.border.$value;
+export const colorBorderStrong = tokens.color['border-strong'].$value;
 export const colorSuccess = tokens.color.success.$value;
 export const colorWarning = tokens.color.warning.$value;
 export const colorDanger = tokens.color.danger.$value;

@@ -1,16 +1,17 @@
 /* Generated from tokens.json (DTCG format) — keep in sync by hand. */
 :root {
-  --color-primary: #5e90db;
-  --color-accent-soft: rgba(94, 144, 219, 0.12);
+  --color-primary: #2a65bd;
+  --color-accent-soft: rgba(42, 101, 189, 0.12);
   --color-surface: #ffffff;
   --color-surface-canvas: #f7f7f5;
   --color-text: #1a1a18;
   --color-text-muted: #6b6b66;
   --color-text-on-primary: #ffffff;
   --color-border: #e4e4df;
-  --color-success: #4d9d6b;
-  --color-warning: #c28f2c;
-  --color-danger: #c25450;
+  --color-border-strong: #91917d;
+  --color-success: #366f4c;
+  --color-warning: #7f5e1d;
+  --color-danger: #ab403c;
   --font-size-sm: 13pt;
   --font-size-base: 16pt;
   --font-size-lg: 20pt;
